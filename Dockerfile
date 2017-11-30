@@ -18,6 +18,7 @@ echo "Acquire::http {No-Cache=True;};" > /etc/apt/apt.conf.d/no-cache && \
 # Install prerequisites
 apt-get update && \
 apt-get install -qy libasound2 wget && \
+apt-get install -qy mosquitto-clients && \
 
 # clean up
 apt-get clean && \
@@ -43,3 +44,4 @@ RUN chmod +x /etc/service/xeoma/run
 VOLUME [ "/config", "/archive" ]
 
 EXPOSE 8090
+EXPOSE 10090-10100
